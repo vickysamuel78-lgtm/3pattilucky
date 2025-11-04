@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 Patti Lucky - Online Gambling Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Start Screen -->
+        <div id="start-screen">
+            <h1 class="game-title">🎰 3 PATTI LUCKY 🎰</h1>
+            <p class="game-subtitle">The Ultimate Indian Card Game Experience</p>
+            
+            <div class="settings-panel">
+                <div class="setting-group">
+                    <label for="num-bots">Number of Bot Players:</label>
+                    <select id="num-bots">
+                        <option value="2">2 Bots</option>
+                        <option value="3" selected>3 Bots</option>
+                        <option value="4">4 Bots</option>
+                        <option value="5">5 Bots</option>
+                    </select>
+                </div>
+                
+                <div class="setting-group">
+                    <label for="starting-chips">Starting Chips:</label>
+                    <select id="starting-chips">
+                        <option value="500">500</option>
+                        <option value="1000" selected>1000</option>
+                        <option value="2000">2000</option>
+                        <option value="5000">5000</option>
+                    </select>
+                </div>
+                
+                <div class="setting-group">
+                    <label for="difficulty">Bot Difficulty:</label>
+                    <select id="difficulty">
+                        <option value="easy">Easy - Beginner Bots</option>
+                        <option value="medium" selected>Medium - Balanced Bots</option>
+                        <option value="hard">Hard - Expert Bots</option>
+                    </select>
+                </div>
+            </div>
+            
+            <button id="start-game-btn" class="btn btn-primary">Start Game</button>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="game-screen">
+            <!-- Game Header -->
+            <div class="game-header">
+                <div class="game-info">
+                    <div class="info-item">
+                        <span class="info-label">Round</span>
+                        <span class="info-value" id="round-number">1</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Pot</span>
+                        <span class="info-value">💰 <span id="pot-amount">0</span></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Current Bet</span>
+                        <span class="info-value" id="current-bet">0</span>
+                    </div>
+                </div>
+                <div id="game-status">Waiting...</div>
+            </div>
+
+            <!-- Game Table -->
+            <div class="game-table">
+                <div class="pot-display">
+                    <div class="pot-label">💎 POT 💎</div>
+                    <div class="pot-amount-display" id="pot-amount-display">0</div>
+                </div>
+
+                <!-- Players Container -->
+                <div id="players-container">
+                    <!-- Players will be dynamically added here -->
+                </div>
+
+                <!-- Game Controls -->
+                <div class="game-controls">
+                    <button id="fold-btn" class="btn-action btn-fold" disabled>Fold</button>
+                    <button id="call-btn" class="btn-action btn-call" disabled>Call</button>
+                    <button id="raise-btn" class="btn-action btn-raise" disabled>Raise</button>
+                    <button id="see-cards-btn" class="btn-action btn-see" disabled>See Cards</button>
+                </div>
+
+                <!-- Round Result -->
+                <div id="round-result">
+                    <h2 class="result-title">🏆 Round Winner 🏆</h2>
+                    <div class="result-details">
+                        <p><strong>Winner:</strong> <span id="winner-name"></span></p>
+                        <p><strong>Hand:</strong> <span id="winner-hand"></span></p>
+                        <p><strong>Won:</strong> 💰 <span id="winner-amount"></span></p>
+                    </div>
+                </div>
+
+                <button id="new-round-btn" class="btn btn-primary">Next Round</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div id="notification"></div>
+
+    <!-- Scripts -->
+    <script src="game.js"></script>
+    <script src="bot.js"></script>
+    <script src="ui.js"></script>
+</body>
+</html>
